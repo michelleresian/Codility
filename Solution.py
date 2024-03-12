@@ -9,7 +9,7 @@ def solution(A, D):
     card_payments_by_month = {}
 
     # transactions using the amount and dates
-    for amount, date in (A, D):
+    for amount, date in zip(A, D):
         # now split the dates into the year, month,date,
         year, month, _ = date.split('-')
 # If the transaction is an incoming transfer
@@ -33,3 +33,5 @@ def solution(A, D):
                 account_balance -= 5  # Deduct $5 for each month with 3 or more card payments
 
     return account_balance
+
+print(solution([100, 100, 100, -10], ["2020-12-31", "2020-12-22", "2020-12-03", "2020-12-29"]))
